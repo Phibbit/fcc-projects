@@ -3,6 +3,11 @@
 <html>
    <head>
       <title>Timestamp Microservice | freeCodeCamp.org</title>
+      <script>
+        function submit(time) {
+          location.href = "./api/" + time; 
+        }
+      </script>
       <link rel="shortcut icon" href="https://cdn.freecodecamp.org/universal/favicons/favicon-32x32.png" type="image/x-icon"/>
       <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
       <link href="style.css" rel="stylesheet" type="text/css">
@@ -11,6 +16,13 @@
    <body>
     <h1>Timestamp Microservice</h1>
     <hr />
+    <div class="container">
+      <form action="javascript:submit(date.value)">      
+        <label for="date">Enter a date or unix timestamp and submit:</label><br>
+        <input type="text" id="date" name="date">
+        <input type="submit">Submit</input>
+      </form>
+    </div>
     <div class="container">
       <h3>Example Usage:</h3>
       <ul>
@@ -25,7 +37,7 @@
     </div>
     <div class="footer">
       <p>
-        By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a>
+        completed by Philip Wonder for <a href="https://www.freecodecamp.org/">freeCodeCamp</a>
       </p>
     </div>
   </body>
