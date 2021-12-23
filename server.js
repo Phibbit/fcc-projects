@@ -32,7 +32,7 @@ app.get("/Timestamp-Microservice/api/:date?", (req, res) => {
 });
 
 app.get("/Headerparser-Microservice/api/whoami", (req, res) => {
-  res.send(req)
+  res.json(req.headers)
 });
 
 const listener = app.listen(process.env.PORT, function () {
