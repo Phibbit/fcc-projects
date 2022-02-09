@@ -2,11 +2,13 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(cors({ optionsSuccessStatus: 200 }));
 app.use(express.static('main'));
 app.use("/Timestamp-Microservice", express.static('Timestamp-Microservice'));
 app.use("/Headerparser-Microservice", express.static('Headerparser-Microservice'));
+app.use("/URLshortener-Microservice", express.static('URLshortener-Microservice'));
 
 app.get("/Timestamp-Microservice/api/:date?", (req, res) => {
   let input = req.params.date;
@@ -41,6 +43,10 @@ app.get("/Headerparser-Microservice/api/whoami", (req, res) => {
   res.json(response)
 });
 
-const listener = app.listen(process.env.PORT, function () {
-  console.log('Your app is listening on port ' + listener.address().port);
+app.get("/URLshortener-Microservice/api/shorturl", (req, res) => {
+
+});
+
+const listener = app.listen(port, function () {
+  console.log(`Your app is listening on port ${port}...`);
 });
